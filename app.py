@@ -97,6 +97,7 @@ def method():
     return 'Hello, World!'    
 
 if __name__ == '__main__':
-    with app.test_request_context():
-        print(url_for('daum'))
+    #with app.test_request_context():
+        #print(url_for('daum'))
+        
     app.run(debug=True)   
