@@ -93,8 +93,9 @@ def login():
         pw = request.form['pw'] 
         print(id,type(id))
         print(pw,type(pw))
-        #id와pw가 임의로 정한 값이랑 비교해서 맞으면 맞다 틀리면 틀리다.
-        if id == 'abc' and pw == '1234':
+        #id와pw가 임의로 db 값이랑 비교 해서 맞으면 맞다 틀리면 틀리다
+        ret = dbdb.select_user(id, pw)
+        if ret != None:
             return "안녕하세요~ {} 님" .format(id)
         else:
             return "아이디 또는 패스워드를 확인 하세요."    
